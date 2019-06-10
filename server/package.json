@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "nodemon src/db/mysql.js"
+  },
+  "dependencies": {
+    "dotenv-safe": "^6.1.0",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.19.1"
+  }
+}
