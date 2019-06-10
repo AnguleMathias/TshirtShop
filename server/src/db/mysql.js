@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+const db = require("mysql2-promise")();
 require("dotenv-safe").config({
   allowEmptyValues: true
 });
@@ -10,15 +10,6 @@ const config = {
   database:process.env.DB_NAME
 };
 
-const connection = mysql.createConnection(config);
+db.configure(config);
 
-connection.query(
-  'SELECT * FROM product',
-  function(err, results) {
-    console.log(results); // results contains rows returned by server
-  }
-);
-
-connection.connect();
-
-export default connection;
+module.exports = db;

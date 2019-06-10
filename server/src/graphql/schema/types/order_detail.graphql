@@ -1,0 +1,9 @@
+type OrderDetail {
+  item_id: ID!
+  order_id: ID
+  product_id: ID
+  attributes: String
+  product_name: String
+  quantity: Float
+  unit_cost: Float
+}

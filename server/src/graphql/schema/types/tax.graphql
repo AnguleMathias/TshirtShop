@@ -1,0 +1,6 @@
+type Tax {
+  tax_id: ID!
+  shipping_type: String
+  shipping_cost: Float
+  shipping_region_id: ID
+}

@@ -1,0 +1,13 @@
+type Orders {
+  order_id: ID!
+  total_amount: Float
+  created_on: String
+  shipped_on: String
+  status: Float
+  comments: String
+  customer_id: ID
+  auth_code: String
+  reference: String
+  shipping_id: ID
+  tax_id: ID
+}

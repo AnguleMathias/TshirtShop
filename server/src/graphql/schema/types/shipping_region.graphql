@@ -1,0 +1,4 @@
+type ShippingRegion {
+  shipping_region_id: ID!
+  shipping_region: String
+}

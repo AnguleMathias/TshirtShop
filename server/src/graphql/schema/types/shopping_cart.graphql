@@ -1,0 +1,9 @@
+type ShoppingCart {
+  item_id: ID!
+  cart_id: ID
+  product_id: ID
+  attributes: String
+  quantity: Float
+  buy_now: Boolean
+  added_on: String
+}

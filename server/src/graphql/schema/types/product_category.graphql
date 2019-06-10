@@ -1,0 +1,4 @@
+type ProductCategory {
+  product_id: ID
+  category_id: ID
+}

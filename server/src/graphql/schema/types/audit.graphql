@@ -1,0 +1,7 @@
+type Audit {
+  audit_id: ID!
+  order_id: ID
+  created_on: String
+  message: String
+  code: Float
+}

@@ -1,0 +1,6 @@
+type Category {
+  category_id: ID!
+  department_id: ID
+  name: String
+  description: String
+}
