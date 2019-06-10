@@ -1,6 +1,35 @@
+#import Product from './types/attribute.graphql'
+#import Product from './types/attributeValue.graphql'
+#import Product from './types/audit.graphql'
+#import Product from './types/category.graphql'
+#import Product from './types/customer.graphql'
+#import Product from './types/department.graphql'
+#import Product from './types/orderDetail.graphql'
+#import Product from './types/orders.graphql'
+#import Product from './types/productAttribute.graphql'
+#import Product from './types/productCategory.graphql'
 #import Product from './types/products.graphql'
+#import Product from './types/review.graphql'
+#import Product from './types/shipping.graphql'
+#import Product from './types/shippingRegion.graphql'
+#import Product from './types/shoppingCart.graphql'
+#import Product from './types/tax.graphql'
 
 type Query {
+  attribute: Attribute
+  attributeValue: AttributeValue
+  audit: Audit
+  category: [Category]
+  customer: Customer
+  department: Department
+  orderDetail: OrderDetail
+  orders: [Orders]
   product: [Product]
+  productAttribute: ProductAttribute
+  productCategory: ProductCategory
+  review: [Review]
+  shipping: Shipping
+  shippingRegion: ShippingRegion
+  shoppingCart: [ShoppingCart]
+  tax: Tax
 }
-

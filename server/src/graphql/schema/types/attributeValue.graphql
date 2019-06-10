@@ -1,0 +1,5 @@
+type AttributeValue {
+  attribute_value_id: ID!
+  attribute_id: ID
+  value: String
+}

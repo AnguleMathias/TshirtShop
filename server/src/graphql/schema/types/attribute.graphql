@@ -1,5 +1,4 @@
 type Attribute {
-  attribute_value_id: ID
-  attribute_id: ID
-  value: Float
+  attribute_id: ID!
+  name: String
 }
