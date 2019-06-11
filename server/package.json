@@ -1,4 +1,7 @@
 {
+  "name": "tshirtshop-backend",
+  "version": "1.0.0",
+  "author": "angule-mathias",
   "scripts": {
     "start": "nodemon src/index.js"
   },
@@ -14,5 +17,8 @@
     "mysql2-promise": "^0.1.4",
     "nodemon": "^1.19.1",
     "validator": "^11.0.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

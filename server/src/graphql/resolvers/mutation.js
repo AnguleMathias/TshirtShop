@@ -26,7 +26,7 @@ const Mutation = {
      return {
          token,
          email: user[0][0].email,
-         name:user[0][0].email,
+         name:user[0][0].name,
          customer_id: user[0][0].customer_id
      }
    }
