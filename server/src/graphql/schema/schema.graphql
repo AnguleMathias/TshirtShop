@@ -14,22 +14,28 @@
 #import Product from './types/shippingRegion.graphql'
 #import Product from './types/shoppingCart.graphql'
 #import Product from './types/tax.graphql'
+#import User    from './types/user.graphql'
 
 type Query {
-  attribute: Attribute
-  attributeValue: AttributeValue
+  attribute: [Attribute]
+  attributeValue: [AttributeValue]
   audit: Audit
   category: [Category]
-  customer: Customer
+  customer: [Customer]
   department: Department
   orderDetail: OrderDetail
   orders: [Orders]
   product: [Product]
   productAttribute: ProductAttribute
-  productCategory: ProductCategory
+  productCategory: [ProductCategory]
   review: [Review]
-  shipping: Shipping
-  shippingRegion: ShippingRegion
+  shipping: [Shipping]
+  shippingRegion: [ShippingRegion]
   shoppingCart: [ShoppingCart]
-  tax: Tax
+  tax: [Tax]
+}
+
+type Mutation {
+  register(name: String!, email:String!, password: String!): User
+  login(email: String!, password: String!): User
 }
