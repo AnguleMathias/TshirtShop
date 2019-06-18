@@ -1,8 +1,15 @@
 const Query = {
   product:  (_, __, { db })=> {
    return db.query(
-      'SELECT * FROM product ',
+      'SELECT * FROM product '
     ).spread(function (product) {
+      return product;
+    });
+  },
+  getSingleProduct:(_, { product_id }, { db }) =>{
+    return db.query(
+      'SELECT * FROM product WHERE product_id=?',
+      [product_id]).spread(function (product) {
       return product;
     });
   },
