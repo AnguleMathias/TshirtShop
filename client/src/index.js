@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -7,8 +9,8 @@ import 'gestalt/dist/gestalt.css';
 import registerServiceWorker from './registerServiceWorker';
 import Home from './components/products/Home';
 import Navbar from './components/navbar/Navbar';
-import Login from './components/authentication/Login';
-import Signup from './components/authentication/Signup';
+import LoginForm from './components/authentication/LoginForm';
+import SignUp from './containers/SignUp';
 import Checkout from './components/Checkout';
 
 const client = new ApolloClient({
@@ -22,9 +24,14 @@ const App = () => {
           <React.Fragment>
             <Navbar />
             <Switch>
-              <Route component={Home} exact path="/" />
-              <Route component={Login} path="/login" />
-              <Route component={Signup} path="/signup" />
+              <Route component={Home} exact path={[
+                "/",
+                "/products",
+                "/products/inCategory/:id",
+                "/products/inDepartments/:id"
+                ]} />
+              <Route component={LoginForm} path="/login" />
+              <Route component={SignUp} path="/signup" />
               <Route component={Checkout} path="/checkout" />
             </Switch>
           </React.Fragment>

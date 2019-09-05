@@ -1,0 +1,91 @@
+.account {
+  margin-bottom: -0.5em;
+  margin-top: 0.3em;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+ul.account-ul li {
+  display: inline;
+}
+
+.col-md-8 {
+  text-align: center;
+}
+
+.nav-item {
+  text-decoration: none;
+}
+
+.item {
+  font-weight: bold;
+  padding: 12px;
+  color:  #133a5e;
+}
+
+.item:hover {
+  text-decoration: none;
+  color: #DC143C;
+}
+
+.auth {
+  font-weight: bold;
+  padding: 5px;
+  color: #ffa500;
+}
+
+.auth:hover {
+  padding: 5px;
+  text-decoration: none;
+  color: #DC143C;
+}
+
+.profile {
+  margin-left: 2px;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  background-color: midnightblue;
+  padding: 1px;
+  &-brand {
+    text-transform: uppercase;
+    color: #ffa500;
+    font-size: 2.4vw;
+    float: left;
+  }
+  &-brand:hover{
+    color: #DC143C;
+  }
+  .searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    background-color: #F2F3F4;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .search_input {
+    color: black;
+    border: 0;
+    outline: 0;
+    background: #F2F3F4;
+    caret-color: black;
+    line-height: 20px;
+  }
+  .link-item {
+    color: #ffa500;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .link-item:hover {
+    color: #DC143C;
+    text-decoration: none;
+  }
+
+  
+}

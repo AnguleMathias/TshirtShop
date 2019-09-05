@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-import { getOneProduct } from "../../../queries/products";
+import { getOneProduct } from "../../../graphql/queries/products";
 import "./productDescription.scss";
 
 class ProductDescription extends Component {
@@ -72,7 +72,11 @@ class ProductDescription extends Component {
   render() {
     const { data } = this.props;
     if (data.getSingleProduct === undefined) {
-      return "loading";
+      return (
+        <div className=" spinner-grow" role="status">
+          <span className="sr-only"> Loading ...</span>
+        </div>
+      );
     }
     const imageName = require(`../../../assets/images/${this.props.data.getSingleProduct[0].image}`);
     return (
@@ -83,37 +87,69 @@ class ProductDescription extends Component {
         <div className="row">
           <div className="col">
             <div className="row">
-              <div className="col-4 d-flex flex-column p-1 ">
+              <div className="col-5">
+                <div className="col-4 d-flex flex-column p-1 img-small">
+                  <img
+                    src={imageName}
+                    className="img-rounded img-thumbnail m-1 img"
+                    alt=""
+                  />
+                  <img
+                    src={imageName}
+                    className="img-rounded img-thumbnail m-1 img"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className="col-7">
                 <img
                   src={imageName}
-                  className="img-rounded img-thumbnail m-1"
-                />
-                <img
-                  src={imageName}
-                  className="img-rounded img-thumbnail m-1"
+                  className="img-fluid m-auto img img-big"
+                  alt=""
                 />
               </div>
-              <img
-                src={imageName}
-                className="img-fluid img-thumbnail m-auto"
-                style={{ "max-width": "100%", height: "auto" }}
-              />
             </div>
           </div>
           <div className="col">
             <h1 itemProp="name">{data.getSingleProduct[0].name}</h1>
             <div itemProp="offers">
-              <div className="price-shipping">
-                {data.getSingleProduct[0].price}
-              </div>
+              {data.getSingleProduct[0].discounted_price === 0 ? (
+                <div className="price-shipping mb-4 ml-4">
+                  <h4>
+                    &euro; 
+                    {data.getSingleProduct[0].price}
+                  </h4>
+                </div>
+              ) : (
+                <div className="row price-shipping mb-4 ml-4">
+                  <span className="col-2">
+                    <h4>
+                      &euro; 
+                      {data.getSingleProduct[0].discounted_price}
+                    </h4>
+                  </span>
+                  <span>
+                    <h4>
+                      <strike>
+                        &euro; 
+                        {data.getSingleProduct[0].price}
+                      </strike>
+                    </h4>
+                  </span>
+                </div>
+                )}
             </div>
             <div className="ml-0 mr-0 mt-1 mb-15 row">
               <div className="col-6" data-option-index="0">
-                <div className="header">SIZE</div>
+                <div className="header">
+                  <h4>SIZE</h4>
+                </div>
                 <div className="size-switch row">{this.sizes()}</div>
               </div>
               <div className="swatch clear-fix col -6">
-                <div className="header">COLOR</div>
+                <div className="header">
+                  <h4>COLOR</h4>
+                </div>
                 <div className="color-switch row">{this.color()}</div>
               </div>
             </div>
@@ -126,9 +162,13 @@ class ProductDescription extends Component {
               </div>
             </form>
             <div className="description">
-              <div className="description-label">Description</div>
+              <div className="description-label">
+                <h4>Description</h4>
+              </div>
               <div className="description-text">
-                {data.getSingleProduct[0].description}{" "}
+                <small>
+                  {data.getSingleProduct[0].description}{" "}
+                </small>
               </div>
             </div>
           </div>
@@ -141,7 +181,7 @@ class ProductDescription extends Component {
 export default graphql(getOneProduct, {
   options: () => ({
     variables: {
-      product_id: 1
+      product_id: 2
     }
   })
 })(ProductDescription);

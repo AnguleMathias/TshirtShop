@@ -22,11 +22,12 @@ type Query {
   audit: Audit
   category: [Category]
   customer: [Customer]
-  department: Department
+  department: [Department]
   orderDetail: OrderDetail
   orders: [Orders]
   product: [Product]
   getSingleProduct(product_id: ID!): [Product]
+  getProductByDepartment(department_id: ID!): [Product]
   productAttribute: ProductAttribute
   productCategory: [ProductCategory]
   review: [Review]

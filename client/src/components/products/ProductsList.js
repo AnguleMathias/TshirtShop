@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-import { getProductsQuery } from "../../queries/products";
+import { getProductsQuery } from "../../graphql/queries/products";
 import "./productList.scss";
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -39,7 +39,7 @@ class ProductsList extends Component {
                         <small data-key={prod.product_id}>
                           {prod.description}
                         </small>
-                        {prod.discounted_price === "0.00" ? (
+                        {prod.discounted_price === 0 ? (
                           <p data-key={prod.product_id} className="price">
                             &euro; {prod.price}
                           </p>

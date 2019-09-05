@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-import { getProductsQuery } from "../../queries/products";
+import { getProductsQuery } from "../../graphql/queries/products";
 import "../Home.css";
 import ProductDescription from "./product/ProductDescription";
 import ProductsList from "./ProductsList";

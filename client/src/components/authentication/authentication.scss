@@ -1,0 +1,52 @@
+
+h1 {
+    margin:auto;
+}
+.logo-row {
+  height:90px;
+  width:420px;
+  padding-top: 1em;
+  background-color: white;
+}
+
+.logo-row h1 {
+  color: #133a5e;
+}
+
+.auth-user {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  text-align:center;
+  margin-top: 5em;
+  margin-bottom: 10em;
+  height:500px;
+  width:420px;
+}
+
+.auth-user:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.auth-btn {
+  margin-right: 10px;
+}
+
+.btn-default {
+  background-color: #133a5e;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: white;
+  border: none;
+  -webkit-transition: background .3s ease;
+  transition: background .3s ease;
+}
+
+.btn-default:hover {
+  background-color: #133a5e;
+  color: white;
+}
+
+.separator {
+  border: 1px solid black;
+  height: 1px;
+  width: 300px;
+}
+ 

@@ -6,12 +6,26 @@ const Query = {
       return product;
     });
   },
+  getProductByDepartment:(_, { department_id }, { db }) =>{
+    return db.query(
+      'SELECT DISTINCT p.product_id, p.name, p.price, p.discounted_price, p.thumbnail FROM product p INNER JOIN product_category pc ON p.product_id = pc.product_id INNER JOIN category c ON pc.category_id = c.category_id WHERE (p.display = 2 OR p.display = 3) AND c.department_id = ?',
+      [department_id]).spread(function (product) {
+      return product;
+    });
+  },
   getSingleProduct:(_, { product_id }, { db }) =>{
     return db.query(
       'SELECT * FROM product WHERE product_id=?',
       [product_id]).spread(function (product) {
       return product;
     });
+  },
+  department: (_, __, { db}) => {
+    return db.query(
+      'SELECT * FROM department'
+      ).spread(function (department) {
+        return department;
+      })
   },
   category: (_, __, { db}) => {
     return db.query(
